@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="carrito">
+            <h2>Contenido del Carrito</h2>
+            <div id="carrito-items"></div>
+            <p id="total">Total: $0.00</p>
+            <button id="comprar-btn">Comprar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Recuperar el carrito del localStorage
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        // Función para calcular el total
+        function calcularTotal() {
+            return carrito.reduce((sum, item) => sum + item.precio, 0);
+        }
+
+        // Función para mostrar el carrito
+        function mostrarCarrito() {
+            const carritoDiv = document.getElementById('carrito-items');
+            carritoDiv.innerHTML = '';
+            carrito.forEach((item, index) => {
+                carritoDiv.innerHTML += `
+                    <p>
+                        ${item.nombre} - $${item.precio.toFixed(2)} 
+                        <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+                    </p>
+                `;
+            });
+            document.getElementById('total').innerText = `Total: $${calcularTotal().toFixed(2)}`;
+        }
+
+        // Función para eliminar productos del carrito
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        // Función para realizar la compra
+        function comprar() {
+            alert('Gracias por tu compra!');
+            carrito = [];
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        // Mostrar carrito al cargar la página
+        mostrarCarrito();
+
+        // Agregar evento para el botón de compra
+        document.getElementById('comprar-btn').addEventListener('click', comprar);
+    </script>
+</body>
+</html>

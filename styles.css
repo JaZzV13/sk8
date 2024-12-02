@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online - Estilos Skater</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+        body {
+    font-family: 'Oswald', sans-serif; /* Fuente moderna */
+    background-color: #f0f0f0; /* Fondo gris claro */
+    color: #333; /* Color del texto */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d50000; /* Rojo */
+    color: white; /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    max-width: 150px; /* Ajustar el tamaño del logo */
+    height: auto; /* Mantener proporción */
+}
+
+nav ul {
+    list-style-type: none; /* Quitar puntos de la lista */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Mostrar en línea */
+    margin: 0 15px; /* Espacio entre los enlaces */
+}
+
+nav ul li a {
+    color: white; /* Enlaces en blanco */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold; /* Hacer que los enlaces sean más destacados */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+main {
+    padding: 20px; /* Espacio interno del main */
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #e3f2fd; /* Azul claro */
+}
+
+h2 {
+    color: #d50000; /* Rojo para los títulos de sección */
+}
+
+.producto {
+    background-color: white; /* Fondo blanco para productos */
+    border: 1px solid #d50000; /* Borde rojo */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+button {
+    background-color: #0d47a1; /* Azul oscuro */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold; /* Hacer el texto del botón más destacado */
+}
+
+button:hover {
+    background-color: #0b3d99; /* Azul más oscuro al pasar el mouse */
+}
+
+footer {
+    background-color: #d50000; /* Rojo */
+    color: white; /* Texto blanco */
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#form-registro {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-registro label, 
+#form-registro input {
+    margin-bottom: 10px;
+}
+
+#form-registro button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#form-registro button:hover {
+    background-color: #0056b3;
+}
+
+</body>
+</html>
